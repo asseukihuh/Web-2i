@@ -1,0 +1,27 @@
+#premier {
+    background-color: rgb(204, 150, 227);
+    padding: 2%;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.456);
+    margin-bottom: 6px;
+}
+
+#second {
+    background-color: rgb(101, 195, 235);
+    padding: 2%;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.456);
+    margin-bottom: 6px;
+}
+
+.titre {
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.contenu {
+    gap: 5px;
+    display: flex;
+}
