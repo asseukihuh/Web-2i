@@ -58,13 +58,19 @@ img {
 }
 
 #signature {
+    
+    background-color: #57575746;
+    position: fixed;
+    padding: 20px;
+    margin-bottom: 0px;
+    bottom: 0px;
+    text-align: right;
+    left: 0px;
+    right: 0px;
+    color: #ddd;
     border-top-style: solid;
     border-color: #ddd;
-    border-width: 1px;
-    padding-top: 15px;
-    color: #ddd;
-    text-align: end;
-    margin-top: 10%;
+    border-width: 2px;
 }
 
 ol {
