@@ -32,23 +32,47 @@
 				display:none;
 				background-color:yellow;
 		}
+
+		
 	</style>
 
 	<script type="text/javascript">
 
-		var noeud = document.getElementById("popup");	// var globale
-
-		// ne marche pas... pourquoi ? 
-
 		function afficher_popup()
-		{			
+		{	
+			var noeud = document.getElementById("popup");
 			noeud.style.display = "block";
+			var btnaff = document.getElementById("btnaff");
+			var btncach = document.getElementById("btncach");
+			btncach.style.display = "block";
+			btnaff.style.display = "none";
 		}
 
 		function cacher_popup()
 		{
+			var bouton = document.getElementById("popup");
+			var noeud = document.getElementById("popup");
 			noeud.style.display = "none";
+			var btnaff = document.getElementById("btnaff");
+			var btncach = document.getElementById("btncach");
+			btncach.style.display = "none";
+			btnaff.style.display = "block";
 		}
+
+		function popup()
+		{
+			var pop = document.getElementById("popup");
+			var noeud = document.getElementById("btn");
+			if(noeud.value == "Afficher popup"){
+				noeud.value = "Cacher popup";
+				pop.style.display = "block";
+			}
+			else if (noeud.value == "Cacher popup"){
+				noeud.value = "Afficher popup";
+				pop.style.display = "none";
+			}
+		}
+
 	</script>
 
 </head>
@@ -80,8 +104,8 @@
 
 	<hr />
 
-	<input type="button" value="Afficher popup" onclick="afficher_popup();"/>
-	<input type="button" value="Cacher popup" onclick="cacher_popup();"/>
+	<input id="btn" type="button" value="Afficher popup" onclick="popup(this)"/>
+	
 
 
 </body>

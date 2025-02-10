@@ -43,6 +43,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 <input type="text" name="champ_texte"/>
 <input type="submit" />
 </form>
+<input type="text"/>
+
   
 </body>
 <!-- **** F I N **** B O D Y **** -->

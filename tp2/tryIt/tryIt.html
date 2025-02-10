@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- **** H E A D **** -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Applications Multimédia pour le Web</title>
+
+	<style>
+        #div1 {
+            background-color: grey;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        #btn1, #btn2 {
+            bottom: 0;
+            top: 0;
+            margin: 10px;
+        }
+        #text1 {
+            bottom: 0;
+            top: 0;
+            margin: 10px;
+        }
+        .textresult{
+            top: 0;
+            border-style: solid;
+            border-width: 1px;
+            width: 50%;
+        }
+        #textarea1 {
+            width: 50%;
+        }
+        #div2 {
+            display: flex;
+        }
+        p{
+            justify-content: end;
+            margin: 10px;
+        }
+	</style>
+
+	<script type="text/javascript">
+        function maj_btn()
+        {
+            var textid = document.getElementById("textarea1").value;
+            document.getElementById("innertext").innerHTML = textid;
+        }
+
+        function majbtn_pers()
+        {   
+            var checkb = document.getElementById("btn2");
+            if(checkb.checked)
+            {
+                document.getElementById("innertext").innerHTML = document.getElementById("textarea1").value;
+            } 
+        }
+        
+
+
+	</script>
+
+</head>
+<div id = "div1" >
+        <input id="btn1" type="button" value="Mettre à jour" onclick="maj_btn()"/>
+        <input id="btn2" type="checkbox" name="automatiquement"value="check" onclick="majbtn_pers()"/>
+        <label id="btn2" for="automatiquement">automatiquement</label>
+</div>
+<div id="div2">
+    <textarea id="textarea1" onkeyup="majbtn_pers()"></textarea>
+    <div class="textresult"><p id="innertext"></p>
+    </div>
+
+</div>
+<body>
+
+</body>
+</html>
