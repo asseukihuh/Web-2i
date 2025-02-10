@@ -2,6 +2,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     row-gap: 15px;
+    column-gap: 10px;
 }
 div {
     max-height: 250px;
@@ -30,6 +31,10 @@ div>div{
 }
 
 img:hover {
+    filter: brightness(1.5);
+}
+
+div:hover > div {
     filter: brightness(1.5);
     cursor: crosshair;
 }
