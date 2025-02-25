@@ -8,6 +8,14 @@
 	<title>Applications Multimédia pour le Web</title>
 
 	<style>
+        #popup_auto_maj {
+            display: none;
+            background-color: yellow;
+            position: absolute;
+            text-align: center;
+            left: auto;
+            top: auto;
+        }
         #div1 {
             background-color: grey;
             height: 40px;
@@ -30,21 +38,53 @@
             border-width: 1px;
             width: 50%;
         }
+        #innertext{
+            display: block;
+        }
+        #loadimage{
+            display: none;
+        }
         #textarea1 {
             width: 50%;
+            overflow: auto;
         }
         #div2 {
             display: flex;
+            bottom: 10px;
+            height: 800px;
         }
         p{
             justify-content: end;
             margin: 10px;
         }
+        #imgload{
+            display: none;
+            float: right;
+        }
 	</style>
 
 	<script type="text/javascript">
+        var checkb = document.getElementById("btn2");
+        checkb.checked = false;
+
+        function loadingscreen()
+        {
+            var loadingimage = document.getElementById("imgload");
+            var text = document.getElementById("innertext");
+            loadingimage.style.display = "block";
+            text.style.display = "none";
+        }
+        function loadingscreen2()
+        {
+            var loadingimage = document.getElementById("imgload");
+            var text = document.getElementById("innertext");
+            loadingimage.style.display = "none";
+            text.style.display = "block";
+        }
         function maj_btn()
         {
+            loadingscreen();
+            window.setTimeout(loadingscreen2, 100);
             var textid = document.getElementById("textarea1").value;
             document.getElementById("innertext").innerHTML = textid;
         }
@@ -54,19 +94,48 @@
             var checkb = document.getElementById("btn2");
             if(checkb.checked)
             {
-                document.getElementById("innertext").innerHTML = document.getElementById("textarea1").value;
+                maj_btn();
+                console.log("maj_btn")
+                window.setTimeout(majbtn_pers,1000);
+                console.log("maj_btn2")
             } 
         }
+
+        function popup1(oEvent)
+        {
+            var popup = document.getElementById("popup_auto_maj");
+            popup.style.display = "block";
+            popup.style.left = (oEvent.clientX +10) +"px";
+            popup.style.top = (oEvent.clientY +10) +"px";
+        }
+
+        function popup2()
+        {
+            var popup = document.getElementById("popup_auto_maj");
+            popup.style.display = "none";
+        }
+
+
+        function automajarr(oEvent) {
+            var checkb = document.getElementById("btn2");
+            if(oEvent.key === "Escape"){
+                loadingscreen2();
+                checkb.checked = false;
+            }
+        }
         
-
-
 	</script>
 
 </head>
+<body id="body"onkeydown="automajarr(event)">
 <div id = "div1" >
         <input id="btn1" type="button" value="Mettre à jour" onclick="maj_btn()"/>
         <input id="btn2" type="checkbox" name="automatiquement"value="check" onclick="majbtn_pers()"/>
-        <label id="btn2" for="automatiquement">automatiquement</label>
+        <label id="btn2" for="automatiquement"onmouseover="popup1()" onmouseleave="popup2()">automatiquement</label>
+        <img id="imgload"src="ajaxLoader.gif">
+        <div id="popup_auto_maj">
+            <p>Cochez cette case pour mettre a jour automatiquement</p>
+        </div>
 </div>
 <div id="div2">
     <textarea id="textarea1" onkeyup="majbtn_pers()"></textarea>
@@ -74,7 +143,5 @@
     </div>
 
 </div>
-<body>
-
 </body>
 </html>
