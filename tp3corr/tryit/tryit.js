@@ -6,6 +6,27 @@ var ref_code, ref_rendu, ref_cb_auto, ref_img_auto_maj,
     ref_popup;
 var id_timeout;
 
+var lang = "fr";
+
+var contenu_popup = {
+  fr :{
+    "btn_maj": "Cliquez ici pour mettre à jour le rendu",
+    "cb_auto": "Cochez ceci pour activer la mise à jour automatique (désactibable avec Échap)",
+    "code": "Tapez votre code HTML ici",
+    "rendu": "Le rendu du code s'affichera ici après mise à jour"
+  },
+  en :{
+    "btn_maj": "vazjhekazbhdvkbaz",
+    "cb_auto": "vauzdbvazvzazvad",
+    "code": "dvazvdnklazvdn",
+    "rendu": "dvazkbudvabykvzau"
+  }
+};
+
+function language(dazdaz) {
+  lang = dazdaz.value;
+}
+
 // Initialise les variables globales
 function init() {
   console.log("fonction init");
@@ -69,29 +90,8 @@ function afficher_popup(oEvent) {
   }
   console.log(id_html);
   
-  
-  switch (id_html) {
-    case "btn_maj":
-      ref_popup.innerHTML =
-        "<p>Cliquez ici pour mettre à jour le rendu</p>";
-      break;
-    case "cb_auto":
-      ref_popup.innerHTML =
-        "<p>Cochez ceci pour activer la mise à jour automatique (désactibable avec Échap)</p>";
-      break;
-    case "code":
-      ref_popup.innerHTML =
-        "<p>Tapez votre code HTML ici</p>";
-      break;
-    case "rendu":
-      ref_popup.innerHTML =
-        "<p>Le rendu du code s'affichera ici après mise à jour</p>";
-      break;
-    default:
-      ref_popup.innerHTML = "";
-  }
-  
-  if (ref_popup.innerHTML !== "") {
+  if (contenu_popup[lang][id_html] !== undefined) {
+    ref_popup.innerHTML ="<p>" + contenu_popup[lang][id_html] + "</p>";
     ref_popup.style.display = "block";
     ref_popup.style.top = (oEvent.clientY + 10) + "px";
     if (oEvent.clientX + 10 + 120 > window.innerWidth) {
@@ -107,7 +107,6 @@ function cacher_popup(oEvent) {
   console.log("fonction cacher_popup");
   ref_popup.style.display = "none";
 }
-
 
 
 
