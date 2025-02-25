@@ -127,11 +127,11 @@
 	</script>
 
 </head>
-<body id="body"onkeydown="automajarr(event)">
+<body id="body"onkeydown="automajarr(event)"></body>
 <div id = "div1" >
         <input id="btn1" type="button" value="Mettre à jour" onclick="maj_btn()"/>
         <input id="btn2" type="checkbox" name="automatiquement"value="check" onclick="majbtn_pers()"/>
-        <label id="btn2" for="automatiquement"onmouseover="popup1()" onmouseleave="popup2()">automatiquement</label>
+        <label id="btn2" for="automatiquement"onmouseover="popup1(event)" onmouseleave="popup2()">automatiquement</label>
         <img id="imgload"src="ajaxLoader.gif">
         <div id="popup_auto_maj">
             <p>Cochez cette case pour mettre a jour automatiquement</p>
@@ -141,7 +141,5 @@
     <textarea id="textarea1" onkeyup="majbtn_pers()"></textarea>
     <div class="textresult"><p id="innertext"></p>
     </div>
-
 </div>
-</body>
 </html>
