@@ -1,0 +1,111 @@
+#divcycles {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    height: 800px;
+    border-color: black;
+    border-style: solid;
+}
+
+#divexo {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    height: 800px;
+    border-color: black;
+    border-style: solid;
+    overflow: auto;
+}
+
+#divpr {
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+}
+
+#textarea1{
+    resize: none;
+    height: 20px;
+}
+
+#listexo {
+    overflow: auto;
+}
+
+#diff1{
+    background-color: rgb(188, 236, 92);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+}
+
+#diff2{
+    background-color: rgb(235, 235, 77);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+}
+
+#diff3{
+    background-color: rgb(246, 161, 70);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+}
+
+#diff4{
+    background-color: rgb(229, 102, 102);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+}
+
+#titrexo {
+    font-weight: bold;
+}
+
+#divcyc {
+    background-color: rgb(200, 157, 228);
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+#inisidedivcyc input{
+    width: 50px;
+    margin: 2px;
+}
+
+#boutonexp {
+    float: right;
+    margin: 10px;
+    height: 5%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+#boutonexp:hover {
+    border-color: rgb(134, 163, 47);
+    background-color: rgb(212, 240, 127);
+}
+
+#reset{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+#reset:hover {
+    border-color: rgb(169, 40, 40);
+    background-color: rgb(232, 128, 112);
+}

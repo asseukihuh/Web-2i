@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>tryIt Editor</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Page d'édition d'un cycle</h1>
+<div id="divpr">
+    <div id="divexo">
+        <h2>Exercices</h2>
+        <label for="rechercher">Rechercher : </label><input type="text" id="rechercher" onkeydown="enter(event)">
+        <div id="listexo">
+
+        </div>
+        </ul>
+    </div>
+    <div id="divcycles">
+        <h2>Cycles</h2>
+        <form>
+            <div id="divcyc">
+            <label for="nom">Nom : </label><input type="text" id="nom"><br>
+            <div id="inisidedivcyc">
+                <label for="exoslots">Nombre d'exercices : </label><input type="text" id="exoslots" onchange="changeslots()"><br>
+                <label for="exotime">Durée entre chaque exercice : </label><input type="text" id="exotime"><br>
+                <label for="exorep">Repos entre exercices : </label><input type="text" id="exorep"><br>
+                <label for="repetit">Nombre de répétitions du cycle : </label><input type="text" id="repetit"><br>
+                <label for="reposrepet">Repos entre répétitions du cycle : </label><input type="text" id="reposrepet"><br>
+            </div>
+            <input type="button" value="Réinitialiser les slots" id="reset">
+            <div id="slots">
+            </div>
+            </div>
+            <input type="submit" value="Exporter" id="boutonexp">
+        </form>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="script.js">
+</script>
+
+</html>
