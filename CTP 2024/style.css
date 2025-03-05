@@ -39,6 +39,7 @@ h2 {
     border-radius: 20px;
     border-color: black;
     border-style: solid;
+    user-select: none;
 }
 
 #diff2{
@@ -48,6 +49,7 @@ h2 {
     border-radius: 20px;
     border-color: black;
     border-style: solid;
+    user-select: none;
 }
 
 #diff3{
@@ -57,6 +59,7 @@ h2 {
     border-radius: 20px;
     border-color: black;
     border-style: solid;
+    user-select: none;
 }
 
 #diff4{
@@ -66,6 +69,7 @@ h2 {
     border-radius: 20px;
     border-color: black;
     border-style: solid;
+    user-select: none;
 }
 
 #titrexo {
@@ -108,4 +112,34 @@ h2 {
 #reset:hover {
     border-color: rgb(169, 40, 40);
     background-color: rgb(232, 128, 112);
+}
+
+#slotsdiv {
+    background-color: rgba(128, 207, 224, 0.605);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    margin: 2px;
+}
+
+#jsonresult {
+    background-color: rgb(81, 129, 243);
+    height: 400px;
+    width: 60%;
+    position: fixed;
+    right: 10px;
+    bottom: 400px;
+    display: none;
+}
+
+#jsontxt {
+    margin: 30px;
+    width: 90%;
+    resize: none;
+    height: 80%;
+}
+
+body {
+    position: relative;
 }

@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div id="jsonresult">
+        <textarea readonly id="jsontxt"></textarea>
+    </div>
 <h1>Page d'édition d'un cycle</h1>
 <div id="divpr">
     <div id="divexo">
@@ -20,17 +23,17 @@
     </div>
     <div id="divcycles">
         <h2>Cycles</h2>
-        <form>
+        <form name="submitvalues" method="post" onsubmit="exportation()">
             <div id="divcyc">
-            <label for="nom">Nom : </label><input type="text" id="nom"><br>
+            <label for="nom">Nom : </label><input type="text" id="nom" name="nom"><br>
             <div id="inisidedivcyc">
-                <label for="exoslots">Nombre d'exercices : </label><input type="text" id="exoslots" onchange="changeslots()"><br>
-                <label for="exotime">Durée entre chaque exercice : </label><input type="text" id="exotime"><br>
-                <label for="exorep">Repos entre exercices : </label><input type="text" id="exorep"><br>
-                <label for="repetit">Nombre de répétitions du cycle : </label><input type="text" id="repetit"><br>
-                <label for="reposrepet">Repos entre répétitions du cycle : </label><input type="text" id="reposrepet"><br>
+                <label for="exoslots">Nombre d'exercices : </label><input name="slotsnb" type="text" id="exoslots" onchange="changeslots()"><br>
+                <label for="exotime">Durée entre chaque exercice : </label><input name="durentre" type="text" id="exotime"><br>
+                <label for="exorep">Repos entre exercices : </label><input name="reposdur" type="text" id="exorep"><br>
+                <label for="repetit">Nombre de répétitions du cycle : </label><input name="repet" type="text" id="repetit"><br>
+                <label for="reposrepet">Repos entre répétitions du cycle : </label><input name="reposrep" type="text" id="reposrepet"><br>
             </div>
-            <input type="button" value="Réinitialiser les slots" id="reset">
+            <input type="button" onclick='reinitialiser()' value="Réinitialiser les slots" id="reset">
             <div id="slots">
             </div>
             </div>

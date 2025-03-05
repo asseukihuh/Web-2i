@@ -272,7 +272,7 @@ for(let i = 0; i < exercices.length; i++){
     console.log(exercices[i].description.search(searchtext));
 
     if(exercices[i].description.search(searchtext) === 0){
-        divexo1.innerHTML+="<div id="+listdiff[exercices[i].difficulte-1]+">"+
+        divexo1.innerHTML+="<div id="+listdiff[exercices[i].difficulte-1]+" onclick='takeexercise(event)'>"+
                     "<p id='titrexo'>"+exercices[i].nom+"</p>"+
                     "<p>"+exercices[i].description+"</p>"+
                     "<p> Difficulté : "+exercices[i].difficulte+"</p>"
@@ -292,7 +292,7 @@ function enter(event){
         console.log(exercices[i].description.search(searchtext));
 
         if(exercices[i].description.search(searchtext) !== -1 || exercices[i].nom.search(searchtext) !== -1){
-            divexo1.innerHTML+="<div id="+listdiff[exercices[i].difficulte-1]+">"+
+            divexo1.innerHTML+="<div id="+listdiff[exercices[i].difficulte-1]+" onclick='takeexercise(event)'>"+
                         "<p id='titrexo'>"+exercices[i].nom+"</p>"+
                         "<p>"+exercices[i].description+"</p>"+
                         "<p> Difficulté : "+exercices[i].difficulte+"</p>"
@@ -309,6 +309,69 @@ function changeslots(){
     divslots.innerHTML = "";
 
     for(let i = 0; i<slots;i++){
-        divslots.innerHTML+="<p>caca</p>";
+        divslots.innerHTML+="<div id='slotsdiv' onclick='placexercise(event)'>Aucun exercice selectionné</div>";
     }
+}
+
+var slotvalue = "";
+
+function takeexercise(event){
+    let clickedDiv = event.currentTarget;
+    slotvalue = clickedDiv.querySelector("#titrexo").innerText;
+}
+
+
+var selected_exercises = [];
+
+function placexercise(event) {
+    if (slotvalue !== "") {
+        let currentExercise = event.target.innerHTML;
+        if (currentExercise !== "Aucun exercice selectionné") {
+            let index = selected_exercises.indexOf(currentExercise);
+            if (index !== -1) {
+                selected_exercises.splice(index, 1);
+            }
+        }
+
+        event.target.innerHTML = slotvalue;
+        selected_exercises.push(slotvalue);
+
+        console.log(selected_exercises);
+    } else {
+        console.log("No exercise selected");
+    }
+}
+
+function reinitialiser(){
+    slots = document.getElementById("exoslots").value;
+    divslots.innerHTML = "";
+
+    for(let i = 0; i<slots;i++){
+        divslots.innerHTML+="<div id='slotsdiv' onclick='placexercise(event)'>Aucun exercice selectionné</div>";
+    }
+}
+
+var exportedjson;
+var form1 = document.forms["submitvalues"];
+
+var resultdiv = document.getElementById("jsonresult");
+
+function exportation(){
+
+    exportedjson = {
+        "exercices" : [],
+        "nom":form1["nom"].value,
+        "nbRepetitions" : form1["repet"].value,
+        "dureeExercice" : form1["durentre"].value,
+        "reposEntreExercices" : form1["reposdur"].value,
+        "reposEntreCycles" : form1["reposrep"].value,
+        "exercices" : []
+    }
+
+    for(let i=0;i<form1["slotsnb"].value;i++){
+        exportedjson.exercices[i] = selected_exercises[i];
+    }
+
+    resultdiv.innerHTML = exportedjson;
+    resultdiv.style.display = "block";
 }
