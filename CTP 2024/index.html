@@ -10,6 +10,7 @@
 <body>
     <div id="jsonresult">
         <textarea readonly id="jsontxt"></textarea>
+        <input value="confirmer" type="button" id="btnjson" onclick="confirmjson()">
     </div>
 <h1>Page d'édition d'un cycle</h1>
 <div id="divpr">
@@ -23,7 +24,7 @@
     </div>
     <div id="divcycles">
         <h2>Cycles</h2>
-        <form name="submitvalues" method="post" onsubmit="exportation()">
+        <form name="submitvalues" onsubmit="return false">
             <div id="divcyc">
             <label for="nom">Nom : </label><input type="text" id="nom" name="nom"><br>
             <div id="inisidedivcyc">
@@ -37,7 +38,7 @@
             <div id="slots">
             </div>
             </div>
-            <input type="submit" value="Exporter" id="boutonexp">
+            <input type="submit" value="Exporter" id="boutonexp" onclick="exportation()">
         </form>
     </div>
 </div>

@@ -349,17 +349,19 @@ function reinitialiser(){
     for(let i = 0; i<slots;i++){
         divslots.innerHTML+="<div id='slotsdiv' onclick='placexercise(event)'>Aucun exercice selectionné</div>";
     }
+
+    selected_exercises = []
 }
 
 var exportedjson;
 var form1 = document.forms["submitvalues"];
 
-var resultdiv = document.getElementById("jsonresult");
+var resultdiv = document.getElementById("jsontxt");
+var resultdiv2 = document.getElementById("jsonresult");
 
 function exportation(){
 
     exportedjson = {
-        "exercices" : [],
         "nom":form1["nom"].value,
         "nbRepetitions" : form1["repet"].value,
         "dureeExercice" : form1["durentre"].value,
@@ -372,6 +374,10 @@ function exportation(){
         exportedjson.exercices[i] = selected_exercises[i];
     }
 
-    resultdiv.innerHTML = exportedjson;
-    resultdiv.style.display = "block";
+    resultdiv.value = JSON.stringify(exportedjson);
+    resultdiv2.style.display = "block";
+}
+
+function confirmjson(){
+    resultdiv2.style.display = "none";
 }
