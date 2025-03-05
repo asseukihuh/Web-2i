@@ -130,7 +130,7 @@ h2 {
     position: fixed;
     right: 10px;
     bottom: 400px;
-    display: block;
+    display: none;
 
 }
 
@@ -152,7 +152,7 @@ body {
     width: 20%;
 }
 
-#diff1,#diff2,#diff3,#diff4:hover {
+#diff1:hover,#diff2:hover,#diff3:hover,#diff4:hover {
     border-color: black;
     border-width: 4px;
 }
