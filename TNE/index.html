@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>tryIt Editor</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript">
+    var par1,txtar1,par2,txtar2
+
+    var innertext1 = "";
+
+    function modify1() {
+
+        par1 = document.getElementById("contenu1");
+        txtar1 = document.getElementById("text1");
+
+        console.log(par1.innerHTML);
+
+        par1.style.display = "none";
+        txtar1.style.display = "flex";
+        txtar1.value = par1.innerHTML;
+    }
+
+    function confirm1(event) {
+        par1 = document.getElementById("contenu1");
+        txtar1 = document.getElementById("text1");
+
+        if(event.key == "Enter") {
+            par1.style.display = "flex";
+            txtar1.style.display = "none";
+            par1.innerHTML = txtar1.value;
+        }
+
+    }
+
+    function modify2() {
+        par2 = document.getElementById("contenu2");
+        txtar2 = document.getElementById("text2");
+
+        console.log(par2.innerHTML);
+
+        par2.style.display = "none";
+        txtar2.style.display = "flex";
+        txtar2.value = par2.innerHTML;
+    }
+
+    function confirm2(event) {
+        par2 = document.getElementById("contenu2");
+        txtar2 = document.getElementById("text2");
+
+        if(event.key == "Enter") {
+            par2.style.display = "flex";
+            txtar2.style.display = "none";
+            par2.innerHTML = txtar2.value;
+        }
+    }
+  </script>
+</head>
+<body>
+<p>Exercice Paragraphes</p>
+<p>Premier paragraphe</p> 
+<div id="premier" class="cadre" onclick="modify1()" onkeydown="confirm1(event)">
+	<p id="contenu1"></p>
+    <textarea id="text1"></textarea>
+</div>
+
+<div id="second" class="cadre" onclick="modify2()" onkeydown="confirm2(event)">
+	<p id="contenu2"></p>
+    <textarea id="text2"></textarea>
+</div>
+
+
+</body>
+<!-- **** F I N **** B O D Y **** -->
+
+</html>

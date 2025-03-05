@@ -1,0 +1,91 @@
+#premier {
+    background-color: rgb(204, 150, 227);
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.456);
+    margin-bottom: 6px;
+}
+
+#premier:hover {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+#second {
+    background-color: rgb(101, 195, 235);
+
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.456);
+    margin-bottom: 6px;
+}
+
+#second:hover {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.titre {
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+#contenu1 {
+    gap: 5px;
+    display: flex;
+    word-break: break-all;
+}
+
+#contenu2 {
+    gap: 5px;
+    display: flex;
+    word-break: break-all;
+}
+
+#secondtext {
+    background-color: rgb(101, 195, 235);
+    padding: 2%;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.456);
+    margin-bottom: 6px;
+    overflow: none;
+    text-wrap: wrap;
+    word-break: break-all;
+}
+
+#premiertext {
+    background-color: rgb(204, 150, 227);
+    padding: 2%;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.456);
+    margin-bottom: 6px;
+    overflow: none;
+    text-wrap: wrap;
+    word-break: break-all;
+}
+
+#text1 {
+    gap: 5px;
+    background-color: rgb(204, 150, 227);
+    resize: none;
+    display: none;
+    padding: 10px;
+    width: 100%;
+    overflow: none;
+    word-break: break-all;
+}
+
+#text2 {
+    gap: 5px;
+    background-color: rgb(101, 195, 235);
+    resize: none;
+    display: none;
+    padding: 10px;
+    width: 100%;
+    overflow: none;
+    word-break: break-all;
+}
