@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="chrono.css" /> 
+<script src="chrono.js"> </script>
+
+<script>
+
+// Crée deux timers qui seront liés à des div dans la fonction init()
+var timer1 = newTimer();
+var timer2 = newTimer(); 
+
+function init() {
+	timer1.bind("mytimer");  // Lie un timer à la div d'identifiant mytimer
+	timer1.reset(20);        // Durée initiale de ce timer
+	timer1.startstop();      // Démarre automatiquement le timer
+	timer1.elapsed = function () {
+		// Fonction appelée lorsque ce timer atteint la valeur 0 
+		console.log("Timer 1 a atteint zéro"); 
+		console.log("A vous de completer cette fonction si nécessaire ! "); 
+	}
+	
+	// Idem avec un deuxième timer qui cette fois n'est pas lancé automatiquement
+	timer2.bind("mytimer2");
+	timer2.reset(10);
+	timer2.elapsed = function () {
+		// Fonction appelée lorsque ce timer atteint la valeur 0 
+		console.log("Timer 2 a atteint zéro"); 
+		console.log("A vous de completer cette fonction si nécessaire ! "); 
+	}
+}
+</script>
+
+<body onload = "init();">
+
+<div id="mytimer"></div>
+<div id="mytimer2"></div>
+ 
+</body>
