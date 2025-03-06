@@ -1,3 +1,14 @@
+var exportedjson;
+var form1 = document.forms["submitvalues"];
+var resultdiv = document.getElementById("jsontxt");
+var resultdiv2 = document.getElementById("jsonresult");
+var selected_exercises = [];
+var slotvalue = "";
+var divexo1 = document.getElementById("listexo");
+let listdiff = ["diff1","diff2","diff3","diff4"]
+var searchtext = document.getElementById("rechercher").value;
+var slots = 0;
+var divslots = document.getElementById("slots");
 var exercices = [
     {
         "nom": "Burpees explosifs",
@@ -261,11 +272,6 @@ var exercices = [
     }
 ];
 
-var divexo1 = document.getElementById("listexo");
-let listdiff = ["diff1","diff2","diff3","diff4"]
-
-
-var searchtext = document.getElementById("rechercher").value;
 
 for(let i = 0; i < exercices.length; i++){
 
@@ -301,8 +307,6 @@ function enter(event){
         }
 }
 
-var slots = 0;
-var divslots = document.getElementById("slots");
 
 function changeslots(){
     slots = document.getElementById("exoslots").value;
@@ -313,15 +317,12 @@ function changeslots(){
     }
 }
 
-var slotvalue = "";
 
 function takeexercise(event){
     let clickedDiv = event.currentTarget;
     slotvalue = clickedDiv.querySelector("#titrexo").innerText;
 }
 
-
-var selected_exercises = [];
 
 function placexercise(event) {
     if (slotvalue !== "") {
@@ -352,12 +353,6 @@ function reinitialiser(){
 
     selected_exercises = []
 }
-
-var exportedjson;
-var form1 = document.forms["submitvalues"];
-
-var resultdiv = document.getElementById("jsontxt");
-var resultdiv2 = document.getElementById("jsonresult");
 
 function exportation(){
 
