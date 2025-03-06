@@ -9,7 +9,7 @@ var timer2 = newTimer();
 
 function init() {
 	timer1.bind("mytimer");  // Lie un timer à la div d'identifiant mytimer
-	timer1.reset(20);        // Durée initiale de ce timer
+	timer1.reset(40);        // Durée initiale de ce timer
 	timer1.startstop();      // Démarre automatiquement le timer
 	timer1.elapsed = function () {
 		// Fonction appelée lorsque ce timer atteint la valeur 0 
@@ -19,7 +19,7 @@ function init() {
 	
 	// Idem avec un deuxième timer qui cette fois n'est pas lancé automatiquement
 	timer2.bind("mytimer2");
-	timer2.reset(10);
+	timer2.reset(80);
 	timer2.elapsed = function () {
 		// Fonction appelée lorsque ce timer atteint la valeur 0 
 		console.log("Timer 2 a atteint zéro"); 

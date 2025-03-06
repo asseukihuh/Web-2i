@@ -1,4 +1,4 @@
-import"chrono/chrono.js";
+import"chrono.js";
 
 var exportedjson;
 var form1 = document.forms["submitvalues"];
