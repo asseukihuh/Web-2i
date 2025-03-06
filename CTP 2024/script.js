@@ -1,3 +1,5 @@
+import"chrono/chrono.js";
+
 var exportedjson;
 var form1 = document.forms["submitvalues"];
 var resultdiv = document.getElementById("jsontxt");
