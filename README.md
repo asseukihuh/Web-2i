@@ -1,2 +1,2 @@
 # WEB-2i 
-Répertoire personnel WEB IG2I.
+Répertoire personnel WEB IG2I
