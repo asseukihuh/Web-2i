@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronomètre en secondes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #chronometre {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1em;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chronometre">0</div>
+    <button onclick="startChrono()">Démarrer</button>
+    <button onclick="stopChrono()">Arrêter</button>
+    <button onclick="resetChrono()">Réinitialiser</button>
+
+    <script>
+        let elapsedTime = 0;
+        let timerInterval;
+        let StopTimer = 10;
+
+        function startChrono() {
+            while(elapsedTime != StopTimer){
+                if (!timerInterval) {
+                    timerInterval = setInterval(function () {
+                        elapsedTime++;
+                        document.getElementById("chronometre").textContent = elapsedTime;
+                    }, 1000);
+                }
+            }
+        }
+
+        function stopChrono() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+
+        function resetChrono() {
+            stopChrono();
+            elapsedTime = 0;
+            document.getElementById("chronometre").textContent = "0";
+        }
+    </script>
+
+</body>
+</html>
