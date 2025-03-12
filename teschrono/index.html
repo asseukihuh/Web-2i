@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronomètre en secondes</title>
+    <title>Chronomètre exemple</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,20 +30,31 @@
     <button onclick="resetChrono()">Réinitialiser</button>
 
     <script>
+        //let intervalID = setInterval(maFonction, 1000); // Exécute `maFonction` toutes les 1000 ms (1 seconde)
+        //clearInterval(intervalID); // Arrête l'exécution répétée
+
         let elapsedTime = 0;
         let timerInterval;
-        let StopTimer = 10;
+        let i = 0;
+        let StopTimer = [10,5,2,6,9,1,4];
 
         function startChrono() {
-            while(elapsedTime != StopTimer){
-                if (!timerInterval) {
+            if (!timerInterval) {
                     timerInterval = setInterval(function () {
+                        if(elapsedTime == StopTimer[i]){
+                            stopChrono();
+                            elapsedTime = 0;
+                            document.getElementById("chronometre").textContent = "0";
+                            startChrono();
+                            i++;
+                        }else{
+                        console.log(elapsedTime)
                         elapsedTime++;
                         document.getElementById("chronometre").textContent = elapsedTime;
+                        }
                     }, 1000);
                 }
             }
-        }
 
         function stopChrono() {
             clearInterval(timerInterval);
@@ -59,3 +70,5 @@
 
 </body>
 </html>
+
+
