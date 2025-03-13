@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- FILE HEAD -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Document Minutes</title> <!-- FILE HEADER -->
+  <link rel="stylesheet" type="text/css" href="aggdocmin.css"> <!-- FILE STYLE -->
+</head>
+
+<!-- FILE BODY -->
+
+<body>
+<button value="cjalcjhsah" onclick="adddiv()">dsadasddas</button>
+<div id="headerdiv">
+  <h1>Génération de template</h1>
+  <p>Plusieurs documents minutes exportés par
+    la page précédente pour un même template doivent pouvoir être stockés ensemble
+    au sein d’un même objet JSON, avec leur template.</p>
+</div>
+<form name="submitvalues" onsubmit="return false"></form>
+<h3>Importation du template au format JSON</h3>
+<div id="importationdiv">
+  <p></p>JSON:
+  <textarea id="imptxt"></textarea>
+  <div></div>
+    <input type="submit" value="Importer" id="boutonimp" onclick="importingtext()">
+</div>
+<h3>Liste documents minutes</h3>
+<div id="ajoutermin">
+
+</div>
+<h3>Exportation des informations au format JSON</h3>
+<div id="exportationdiv">
+  <div>
+    <input type="submit" value="exporter" id="boutonexp" onclick="exporter()">
+  </div>
+  <p></p>JSON:
+  <textarea readonly id="exptxt"></textarea>
+</div>
+</form>
+</body>
+
+<!-- SCRIPT -->
+
+<script type="text/javascript" src="aggdocmin.js">
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- FILE HEAD -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Document Minutes</title> <!-- FILE HEADER -->
+  <link rel="stylesheet" type="text/css" href="docminsas.css"> <!-- FILE STYLE -->
+</head>
+
+<!-- FILE BODY -->
+
+<body>
+<div id="headerdiv">
+  <h1>Génération de template</h1>
+  <p>L’objectif de cette page est de générer un
+    formulaire HTML à partir d’un template (au format JSON exporté par la page
+    précédente), permettant de saisir, pour chacune des informations recensées dans le
+    template, la valeur à enregistrer, et d’exporter l’ensemble des valeurs saisies au
+    format JSON.</p>
+</div>
+<form name="submitvalues" onsubmit="return false"></form>
+<h3>Importation du template au format JSON</h3>
+<div id="importationdiv">
+  <p></p>JSON:
+  <textarea id="imptxt"></textarea>
+  <div></div>
+    <input type="submit" value="Importer" id="boutonimp" onclick="importingtext()">
+  </div>
+</div>
+<h3>Informations à insérer dans le document minutes</h3>
+<div id="informationdiv">
+</div>
+<h3>Exportation des informations au format JSON</h3>
+<div id="exportationdiv">
+  <div>
+    <input type="submit" value="exporter" id="boutonexp" onclick="exporter()">
+  </div>
+  <p></p>JSON:
+  <textarea readonly id="exptxt"></textarea>
+</div>
+</form>
+</body>
+
+<!-- SCRIPT -->
+
+<script type="text/javascript" src="docminsas.js">
+</script>
+
+</html>

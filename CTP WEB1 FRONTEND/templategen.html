@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- FILE HEAD -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Document Minutes</title> <!-- FILE HEADER -->
+  <link rel="stylesheet" type="text/css" href="templategen.css"> <!-- FILE STYLE -->
+</head>
+
+<!-- FILE BODY -->
+
+<body>
+<div id="headerdiv">
+  <h1>Génération de template</h1>
+  <p>L’objectif de cette page est de générer un template
+    de document minutes, en indiquant pour chaque information qui doit être
+    sauvegardée son nom, son type (numérique, chaîne, booléen ou choix multiple ) et3
+    ses valeurs possibles le cas échéant.</p>
+</div>
+<form name="submitvalues" onsubmit="return false"></form>
+<h3>Informations à insérer dans le template</h3>
+<div id="informationdiv">
+    <div id="namediv">
+      <h4>Nom</h4>
+      <p>Auteur</p>
+      <p>Date</p>
+      <p>Durée (heures)</p>
+      <input type="text" id="addname">
+    </div>
+    <div id="typediv">
+      <h4>Type</h4>
+      <p>Chaine</p>
+      <p>Chaine</p>
+      <p>Numérique</p>
+      <select id="type" name="type">
+        <option value="Numérique">Numérique</option>
+        <option value="Chaine">Chaine</option>
+        <option value="Booléen">Booléen</option>
+        <option value="Choix Multiple">Choix Multiple</option>
+      </select>
+    </div>
+    <div id="valdiv">
+      <h4>Valeurs possibles</h4>
+      <br><br><br><br><br>
+      <input type="text" id="valpos">
+    </div>
+    <div id="actiondiv">
+      <h4>Action</h4>
+      <input id="btn1" type="button" value="Supprimer">
+      <input id="btn2" type="button" value="Supprimer">
+      <input id="btn3" type="button" value="Supprimer">
+      <input id="btn4" type="button" value="Ajouter" onclick="addingtotemp()">
+    </div>
+</div>
+<h3>Exportation du template au format JSON</h3>
+<div id="exportationdiv">
+  <div>
+    <input type="submit" value="exporter" id="boutonexp" onclick="exporter()">
+  </div>
+  <p></p>JSON:
+  <textarea readonly id="exptxt"></textarea>
+</div>
+</form>
+</body>
+
+<!-- SCRIPT -->
+
+<script type="text/javascript" src="templategen.js">
+</script>
+
+</html>
